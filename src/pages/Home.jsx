@@ -2,8 +2,11 @@ import React from 'react';
 import Header from '../components/Header';
 import Carousel from '../components/Carousel';
 import ProjetRecentCard from '../components/ProjetRecentCard';
-import ServiceCard from '../components/ServiceCard'; 
+import ServiceCard from '../components/ServiceCard';
 import ActualiteCard from '../components/ActualiteCard';
+import ThemeCard from '../components/ThemeCard';
+import NewsletterSection from '../components/NewsletterSection';
+import Footer from '../components/Footer';
 
 const projectsData = [
   {
@@ -54,42 +57,70 @@ const projectsData = [
 
 const servicesData = [
   {
-    title: "Délivrance d’attestation de non exclusion de la commande publique",
-    description: "Ce service public permet d’avoir une attestation de non exclusion de la commande publique."
+    title: 'Délivrance d’attestation de non exclusion de la commande publique',
+    description:
+      'Ce service public permet d’avoir une attestation de non exclusion de la commande publique.',
   },
   {
-    title: "Délivrance du Casier Judiciaire (Extrait B3 du casier judiciaire)",
-    description: "Ce service permet à tout citoyen béninois, tout étranger résidant au pays de nationalité ou titulaire de domaine un extrait B3 de son casier judiciaire. Ce casier judiciaire est valide pour 3 mois."
+    title: 'Délivrance du Casier Judiciaire (Extrait B3 du casier judiciaire)',
+    description:
+      'Ce service permet à tout citoyen béninois, tout étranger résidant au pays de nationalité ou titulaire de domaine un extrait B3 de son casier judiciaire. Ce casier judiciaire est valide pour 3 mois.',
   },
   {
-    title: "Extrait du Registre de Commerce et de Crédit Mobilier (RCCM)",
-    description: "Ce service permet d'obtenir un extrait du registre de commerce et du crédit mobilier (RCCM) et une inscription non radiée."
+    title: 'Extrait du Registre de Commerce et de Crédit Mobilier (RCCM)',
+    description:
+      "Ce service permet d'obtenir un extrait du registre de commerce et du crédit mobilier (RCCM) et une inscription non radiée.",
   },
   {
-    title: "Première Immatriculation d’un Véhicule 4 Roues et plus",
-    description: "Ce service permet d’immatriculer un véhicule neuf ou d'occasion de quatre (04) roues et plus. Il est conseillé de prendre ce service d’une personne pour effectuer ses démarches d’immatriculation."
-  }
+    title: 'Première Immatriculation d’un Véhicule 4 Roues et plus',
+    description:
+      "Ce service permet d’immatriculer un véhicule neuf ou d'occasion de quatre (04) roues et plus. Il est conseillé de prendre ce service d’une personne pour effectuer ses démarches d’immatriculation.",
+  },
 ];
 const newsData = [
-    {
-      type: "Nouvelles",
-      title: "Code du numérique : le CES s’imprègne des enjeux d’une réforme stratégique",
-      image: "https://numerique.gouv.bj/assets/num-135.jpg",
-      link: "#"
-    },
-    {
-      type: "Nouvelles",
-      title: "Appel à candidature « Amazones du digital » - Edition 2025",
-      image: "https://numerique.gouv.bj/assets/banner-amazones-du-digital-2025.jpg",
-      link: "#"
-    },
-    {
-      type: "Communiqués",
-      title: "Labellisation des startups : résultats du premier appel à candidatures",
-      image: "https://numerique.gouv.bj/assets/lancement-labet-startup-03-1747071678.jpg",
-      link: "#"
-    }
-  ];
+  {
+    type: 'Nouvelles',
+    title:
+      'Code du numérique : le CES s’imprègne des enjeux d’une réforme stratégique',
+    image: 'https://numerique.gouv.bj/assets/num-135.jpg',
+    link: '#',
+  },
+  {
+    type: 'Nouvelles',
+    title: 'Appel à candidature « Amazones du digital » - Edition 2025',
+    image:
+      'https://numerique.gouv.bj/assets/banner-amazones-du-digital-2025.jpg',
+    link: '#',
+  },
+  {
+    type: 'Communiqués',
+    title:
+      'Labellisation des startups : résultats du premier appel à candidatures',
+    image:
+      'https://numerique.gouv.bj/assets/lancement-labet-startup-03-1747071678.jpg',
+    link: '#',
+  },
+];
+const themesData = [
+  {
+    image:
+      'https://numerique.gouv.bj/assets/banner-amazones-du-digital-2025.jpg',
+    title: 'Code du numérique',
+    link: '#',
+  },
+  {
+    image:
+      'https://numerique.gouv.bj/assets/banner-amazones-du-digital-2025.jpg',
+    title: 'Réformes',
+    link: '#',
+  },
+  {
+    image:
+      'https://numerique.gouv.bj/assets/banner-amazones-du-digital-2025.jpg',
+    title: 'Plateformes',
+    link: '#',
+  },
+];
 
 const Home = () => {
   return (
@@ -128,13 +159,14 @@ const Home = () => {
         </h2>
         <p className="text-gray-700 text-center leading-relaxed  mx-auto">
           Site officiel de l’administration publique, le Portail National des
-          services publics est la porte d’entrée pour s’informer sur les services
-          publics, sans se déplacer, <span className="font-semibold">24h/24 et 7j/7</span>, à partir d’un
-          terminal connecté : smartphone, ordinateur, ou tablette.
-          Cette plateforme numérique permet également de consommer les services
+          services publics est la porte d’entrée pour s’informer sur les
+          services publics, sans se déplacer,{' '}
+          <span className="font-semibold">24h/24 et 7j/7</span>, à partir d’un
+          terminal connecté : smartphone, ordinateur, ou tablette. Cette
+          plateforme numérique permet également de consommer les services
           publics partiellement ou entièrement dématérialisés.
         </p>
-        
+
         {/* Bouton "Consulter les services populaires" */}
         <div className="text-center mt-12">
           <a
@@ -154,33 +186,65 @@ const Home = () => {
             />
           ))}
         </div>
-            {/* Section Actualités */}
-      <div className="container mx-auto py-16">
-        <div className="flex justify-between items-center mb-10">
-          <h2 className="text-xl md:text-2xl font-bold uppercase tracking-wide text-gray-800">
-            Actualités
-          </h2>
-          <a href="#" className="flex items-center text-sm font-semibold text-blue-500 hover:text-blue-700">
-            <span>Voir plus d'actualités</span>
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-            </svg>
-          </a>
-        </div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {newsData.map((news, index) => (
-            <ActualiteCard
-              key={index}
-              type={news.type}
-              title={news.title}
-              image={news.image}
-              link={news.link}
-            />
-          ))}
+        {/* Section Actualités */}
+        <div className="container mx-auto py-16">
+          <div className="flex justify-between items-center mb-10">
+            <h2 className="text-xl md:text-2xl font-bold uppercase tracking-wide text-gray-800">
+              Actualités
+            </h2>
+            <a
+              href="#"
+              className="flex items-center text-sm font-semibold text-blue-500 hover:text-blue-700"
+            >
+              <span>Voir plus d'actualités</span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-4 w-4 ml-1"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M9 5l7 7-7 7"
+                />
+              </svg>
+            </a>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {newsData.map((news, index) => (
+              <ActualiteCard
+                key={index}
+                type={news.type}
+                title={news.title}
+                image={news.image}
+                link={news.link}
+              />
+            ))}
+          </div>
         </div>
       </div>
+      {/* Section Thèmes */}
+      <div className="bg-blue-50 py-16">
+        <div className="container mx-auto px-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {themesData.map((theme, index) => (
+              <ThemeCard
+                key={index}
+                image={theme.image}
+                title={theme.title}
+                link={theme.link}
+              />
+            ))}
+          </div>
+        </div>
       </div>
+        {/* Section Newsletter */}
+        <NewsletterSection />
+        <Footer />
     </div>
   );
 };
