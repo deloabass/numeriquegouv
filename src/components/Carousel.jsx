@@ -43,7 +43,7 @@ const Carousel = () => {
                 style={{ transform: `translateX(-${currentSlide * 100}%)` }}
             >
                 {slides.map((slide, index) => (
-                    <div key={index} className="w-full flex-shrink-0 relative h-96 md:h-[600px] bg-cover bg-center" style={{ backgroundImage: `url(${slide.image})` }}>
+                    <div key={index} className="w-full flex-shrink-0 relative h-100 md:h-[650px] bg-cover bg-center" style={{ backgroundImage: `url(${slide.image})` }}>
                         {/* Superposition sombre */}
                         <div className="absolute inset-0 flex flex-col justify-end items-center text-center">
                             {/* Titre principal "RÉSULTATS" en filigrane */}
