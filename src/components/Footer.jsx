@@ -70,20 +70,21 @@ const Footer = () => {
               <li className="flex items-center space-x-2">
                 <MapPin size={16} />
                 <span>
-                  Sise à Agblangandan,
+                Rue 440, Cotonou
+                  {/* Sise à Agblangandan,
                   <br />
-                  BP 328
+                  BP 328 */}
                 </span>
               </li>
               <li className="flex items-center space-x-2">
                 <Mail size={16} />
-                <a href="mailto:contact@numerique.gouv.bj" className="hover:text-white">
-                  contact@numerique.gouv.bj
+                <a href="mailto: numerique@gouv.bj" className="hover:text-white">
+                numerique@gouv.bj
                 </a>
               </li>
               <li className="flex items-center space-x-2">
                 <Phone size={16} />
-                <span>(+229) 21 31 10 39</span>
+                <span> 00229 21 30 02 36</span>
               </li>
             </ul>
           </div>
