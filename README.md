@@ -1,5 +1,5 @@
 # React + Vite
-
+// Bleu (#0052A3), Blanc (#FFFFFF), Gris clair (#F5F5F5), accents Orange (#FF9800)
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 Currently, two official plugins are available:
